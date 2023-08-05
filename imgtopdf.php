@@ -43,6 +43,7 @@ if($_POST) {
 
 
     foreach($_POST['images'] as $img){
+        $img = str_replace('%20',' ',$img);
         $pdf->AddPage('');
         $pdf->Image($img, '', '', 0, 0, '', '', 'T', true, 2400, '', false, false, 1, true, false, true);
     }
